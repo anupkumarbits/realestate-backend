@@ -43,6 +43,11 @@ pipeline {
                 '''
             }
         }
+        stage('Prepare Env') {
+            steps {
+                sh 'cp /opt/envs/realestate.env .env'
+            }
+        }
 
         stage('Run Container') {
             steps {
