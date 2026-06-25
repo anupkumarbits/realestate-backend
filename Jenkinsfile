@@ -48,10 +48,10 @@ pipeline {
             steps {
                 sh '''
                 docker run -d \
-                --name $CONTAINER_NAME \
-                -p $PORT:5000 \
-                --env-file .env \
-                $IMAGE_NAME
+                --name realestate-backend-container \
+                -p 9001:5000 \
+                realestate-backend
+              
                 '''
             }
         }
@@ -67,3 +67,4 @@ pipeline {
         }
     }
 }
+
