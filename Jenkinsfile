@@ -50,6 +50,7 @@ pipeline {
                 docker run -d \
                 --name realestate-backend-container \
                 -p 9001:5000 \
+                --env-file .env \
                 realestate-backend
               
                 '''
