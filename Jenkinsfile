@@ -197,14 +197,14 @@ ${env.BUILD_URL}input
         stage('Cleanup Old Images') {
             steps {
                 echo "==> Purani Docker images hata rahe hain"
-                sh """
+                sh '''
                     # Latest 3 builds ke alawa sab images delete karo
                     docker images ${IMAGE_NAME} --format '{{.Tag}}' \\
                         | grep -E '^[0-9]+$' \\
                         | sort -rn \\
                         | tail -n +4 \\
                         | xargs -I{} docker rmi ${IMAGE_NAME}:{} || true
-                """
+                '''
             }
         }
 
