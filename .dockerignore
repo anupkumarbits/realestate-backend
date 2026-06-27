@@ -1,0 +1,44 @@
+# Node modules — Docker ke andar fresh install hoga
+node_modules
+npm-debug.log*
+
+# Environment files — kabhi bhi image mein nahi jaane chahiye
+# Secrets hoti hain inme
+.env
+.env.*
+.env.local
+.env.production
+
+# Git history — unnecessary size
+.git
+.gitignore
+
+# Logs
+logs
+*.log
+
+# Testing
+coverage
+.nyc_output
+__tests__
+*.test.js
+*.spec.js
+
+# Dev tools config
+.eslintrc*
+.prettierrc*
+.editorconfig
+jest.config.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode
+.idea
+
+# Jenkins workspace files
+Jenkinsfile
+README.md
+docs
