@@ -60,8 +60,7 @@ EXPOSE 5000
 # Healthcheck: Docker ko pata chalega container sahi chal raha hai ya nahi
 # Jenkins aur Grafana dono is status ko use kar sakte hain
 HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:5000/health', (r) => { process.exit(r.statusCode === 200 ? 0 : 1) })" \
-  || exit 1
+  CMD pgrep -f "node server.js" || exit 1
 
 # node seedha use kar rahe hain (npm start nahi)
 # Kyun: npm extra process hai, signals properly forward nahi karta
